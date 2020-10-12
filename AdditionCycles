@@ -1,0 +1,25 @@
+#include<iostream>
+
+using namespace std;
+
+class AdditionCycles
+    {
+    	public:
+    		int cycleLength(int n);
+    };
+
+int AdditionCycles:: cycleLength(int n)
+    {
+        int ret = 0;
+    int n2 = n;
+    do {
+      int u = n2 % 10;
+      int t = n2 / 10;
+      int t2 = u;
+      int u2 = (u+t) % 10;
+      n2 = t2 * 10 + u2;
+      ++ret;
+    } while (n2 != n);
+    return ret;
+  
+    }
